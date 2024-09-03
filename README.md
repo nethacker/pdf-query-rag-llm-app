@@ -6,7 +6,7 @@
 
 This repo is provide an example of a PDF query with Generative AI application that uses a <a href="https://en.wikipedia.org/wiki/Retrieval-augmented_generation" target="_blank">Retrieval-augmented generation (RAG) process</a>. Vector representations of unstructured text are generated through <a href="https://docs.aws.amazon.com/bedrock/latest/userguide/titan-embedding-models.html" target="_blank">Amazon Titan Embeddings</a> and search of those embeddings are done through <a href="https://ai.meta.com/tools/faiss/" target="_blank">Facebook AI Similarity Search (FAISS)</a>. <a href="https://docs.anthropic.com/en/docs/about-claude/models" target="_blank">Claude 3.5 Sonnet LLM Model</a> is utilized as the LLM model. Amazon Titan Embeddings and Claude 3.5 Sonnet are accessed via <a href="https://aws.amazon.com/bedrock/" target="_blank">AWS Bedrock</a>. For the frontend UI <a href="https://streamlit.io/" target="_blank">Streamlit</a> is being used.
 
-* This example application can be used against multiple PDF's.
+* This example application can be used against multiple PDF's add them to the *data* directory and click *New Data Update*.
 * Depending on the size of your PDF's and your machine power it can take awhile to generated the embeddings.
 * This application does not take into consideration security controls, that is up to you.
 * Please read <a href="https://aws.amazon.com/bedrock/faqs/" target="_blank">Amazon Bedrock FAQ's</a> for general questions about AWS LLM resources used.
@@ -53,7 +53,7 @@ To run text PDF Query RAG LLM Application
 streamlit run pdf-query-rag-llm-app.py
 ```
 
-You can reach the app at `http://localhost:8501/`
+You can reach the app at `http://localhost:8501/`. Please put your PDF's that you want to query in the *data* directory and click *New Data Update* before querying.
 
 ## EC2 Ubuntu Linux Instance Setup Steps
 (assumes you have a ubuntu user with /home/ubuntu)
@@ -113,8 +113,11 @@ sudo ln -s /etc/nginx/sites-available/pdf-query-rag-llm-app.conf /etc/nginx/site
 
 sudo systemctl restart nginx
 
+You can reach the app at `http://{yourhost}`. Please put your PDF's that you want to query in the *data* directory on the instance and click *New Data Update* before querying.
+
 ### Miscellaneous
 
 * Make sure to open up port 80 in your EC2 Security Group Associated to the Instnace
 * For HTTPS (TLS) you can use AWS ALB or AWS CloudFront
 * Depending on how many PDF's you have and how big they are using the New Data Update button can take awhile as it builds your vector embeddings
+* Any time you add PDF's or change them make sure to click "New Data Update" to update/build your vector embeddings.
