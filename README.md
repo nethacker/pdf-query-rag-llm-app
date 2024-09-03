@@ -6,8 +6,8 @@
 
 This repo is provide an example of a PDF query with Generative AI application that uses a <a href="https://en.wikipedia.org/wiki/Retrieval-augmented_generation" target="_blank">Retrieval-augmented generation (RAG) process</a>. Vector representations of unstructured text are generated through <a href="https://docs.aws.amazon.com/bedrock/latest/userguide/titan-embedding-models.html" target="_blank">Amazon Titan Embeddings</a> and search of those embeddings are done through <a href="https://ai.meta.com/tools/faiss/" target="_blank">Facebook AI Similarity Search (FAISS)</a>. <a href="https://docs.anthropic.com/en/docs/about-claude/models" target="_blank">Claude 3.5 Sonnet LLM Model</a> is utilized as the LLM model. Amazon Titan Embeddings and Claude 3.5 Sonnet are accessed via <a href="https://aws.amazon.com/bedrock/" target="_blank">AWS Bedrock</a>. For the frontend UI <a href="https://streamlit.io/" target="_blank">Streamlit</a> is being used.
 
-* This example application can be used against multiple PDF's add them to the *data* directory and click *New Data Update*.
-* Depending on the size of your PDF's and your machine power it can take awhile to generated the embeddings.
+* This example application can be used against multiple PDF's just add them to the *data* directory and click *New Data Update*.
+* Depending on the size of your PDF's and your cpu specs it can take awhile to generated the embeddings.
 * This application does not take into consideration security controls, that is up to you.
 * Please read <a href="https://aws.amazon.com/bedrock/faqs/" target="_blank">Amazon Bedrock FAQ's</a> for general questions about AWS LLM resources used.
 
@@ -32,6 +32,7 @@ As with most AWS services you will incur costs for usage.
 
 * Pricing:
   * https://aws.amazon.com/bedrock/pricing/
+  * https://aws.amazon.com/ec2/pricing/on-demand/
 
 ## macOS Laptop Local Setup
 
@@ -77,7 +78,7 @@ sudo apt -y install virtualenvwrapper
 ```
 cd /home/ubuntu
 
-git clone git@github.com:nethacker/pdf-query-rag-llm-app.git
+git clone https://github.com/nethacker/pdf-query-rag-llm-app.git
 ```
 
 ### Setup the Python Environment
@@ -87,7 +88,7 @@ virtualenv pdf-query-rag-llm-app_env
 source pdf-query-rag-llm-app_env/bin/activate
 ```
 
-### Install the Text Summarization LLM APP package dependencies
+### Install the PDF Query RAG LLM Application package dependencies
 ```
 cd /home/ubuntu/pdf-query-rag-llm-app
 
@@ -105,7 +106,7 @@ sudo systemctl enable pdf-query-rag-llm-app.service
 
 ### Install NGINX to help scale and handle connections (Port 80)
 ```
-sudo vim /etc/nginx/sites-available/nginx_pdf-query-rag-llm-app.conf
+sudo cp nginx/nginx_pdf-query-rag-llm-app.conf /etc/nginx/sites-available/nginx_pdf-query-rag-llm-app.conf
 
 sudo rm /etc/nginx/sites-enabled/default
 
