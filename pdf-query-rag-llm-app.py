@@ -32,7 +32,7 @@ def setup_vector_store(documents):
 
 # LLM Setup
 def load_llm():
-    llm = ChatBedrock(model_id="anthropic.claude-3-sonnet-20240229-v1:0", client=bedrock, model_kwargs={"max_tokens": 2048})
+    llm = ChatBedrock(model_id="anthropic.claude-3-5-sonnet-20240620-v1:0", client=bedrock, model_kwargs={"max_tokens": 2048})
     return llm
 
 # LLM Guidelines
