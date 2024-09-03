@@ -110,7 +110,7 @@ sudo cp nginx/nginx_pdf-query-rag-llm-app.conf /etc/nginx/sites-available/nginx_
 
 sudo rm /etc/nginx/sites-enabled/default
 
-sudo ln -s /etc/nginx/sites-available/pdf-query-rag-llm-app.conf /etc/nginx/sites-enabled
+sudo ln -s /etc/nginx/sites-available/nginx_pdf-query-rag-llm-app.conf /etc/nginx/sites-enabled
 
 sudo systemctl restart nginx
 
