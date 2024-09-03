@@ -113,6 +113,7 @@ sudo rm /etc/nginx/sites-enabled/default
 sudo ln -s /etc/nginx/sites-available/nginx_pdf-query-rag-llm-app.conf /etc/nginx/sites-enabled
 
 sudo systemctl restart nginx
+```
 
 You can reach the app at `http://{yourhost}`. Please put your PDF's that you want to query in the *data* directory on the instance and click *New Data Update* before querying.
 
