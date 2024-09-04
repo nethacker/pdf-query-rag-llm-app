@@ -11,7 +11,7 @@ from langchain_community.document_loaders.pdf import PyPDFDirectoryLoader
 from langchain.globals import set_verbose
 set_verbose(False)
 
-bedrock = boto3.client(service_name='bedrock-runtime')
+bedrock = boto3.client(service_name='bedrock-runtime', region_name='us-east-1')
 titan_embeddings = BedrockEmbeddings(model_id="amazon.titan-embed-text-v1", client=bedrock)
 
 # Data Preparation
