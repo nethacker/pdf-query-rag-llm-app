@@ -3,11 +3,11 @@ Description=PDF query with Generative AI Service
 After=network.target
  
 [Service]
-User=ubuntu
-Group=ubuntu
-WorkingDirectory=/home/ubuntu/pdf-query-rag-llm-app_env
+User=root
+Group=root
+WorkingDirectory=/home/ubuntu/pdf-query-rag-llm-app
 Environment="PATH=/home/ubuntu/pdf-query-rag-llm-app_env/bin"
-ExecStart=/home/ubuntu/pdf-query-rag-llm-app_env/bin/streamlit run /home/ubuntu/pdf-query-rag-llm-app/pdf-query-rag-llm-app.py --server.port 8080
+ExecStart=/home/ubuntu/pdf-query-rag-llm-app_env/bin/streamlit run /home/ubuntu/pdf-query-rag-llm-app/pdf-query-rag-llm-app.py --server.port 8080 --server.headless true
  
 [Install]
 WantedBy=multi-user.target
