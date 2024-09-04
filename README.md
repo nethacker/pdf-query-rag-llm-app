@@ -18,6 +18,7 @@ This repo is provide an example of a PDF query with Generative AI application th
 * AWS CLI user with Bedrock Access (Specifically Amazon Titan Embeddings and Claude 3.5 Sonnet) see: <a href="https://docs.aws.amazon.com/bedrock/latest/userguide/model-access.html" target="_blank">Manage access to Amazon Bedrock foundation models</a>
 * Python 3.8 or higher
 * Anaconda or Miniconda installed 
+* AWS Default Region is set to us-east-1 you can change the region in the `pdf-query-rag-llm-app.py` file under `region_name='us-east-1'`
 
 ## Prerequisites for EC2 Ubuntu Linux Instance Setup
 * <a href="https://aws.amazon.com" target="_blank"> Amazon Web Services Account</a>
