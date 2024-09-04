@@ -25,6 +25,7 @@ This repo is provide an example of a PDF query with Generative AI application th
 * EC2 Instance Role with AmazonBedrockFullAccess Policy Attached (note you can make this more secure by making a custom policy)
 * EC2 Instance Ubuntu 20.04 or higher
 * Virtualenv
+* AWS Default Region is set to us-east-1 you can change the region in the `pdf-query-rag-llm-app.py` file under `region_name='us-east-1'`
 
 ## AWS Resource Cost
 
