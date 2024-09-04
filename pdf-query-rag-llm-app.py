@@ -37,8 +37,9 @@ def load_llm():
 
 # LLM Guidelines
 prompt_template = """Use the following pieces of context to answer the question at the end. Follow these rules:
-1. If the answer is not within the context knowledge, state that you do not know, versus fabricating a response.
-2. If you find the answer, please craft a detailed, thorough, and concise response to the question at the end. Aim for a summary of max 250 words.
+1. If the answer is not within the context knowledge, state that you do not know, and do not fabricate an answer.
+2. If you find the answer, create a detailed, and concise response to the question. Aim for a summary of max 200 words.
+3. Do not add extra information not within the context.
 
 {context}
 
