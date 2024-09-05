@@ -4,10 +4,10 @@ import streamlit as st
 from langchain_aws import BedrockEmbeddings
 from langchain_aws.chat_models import ChatBedrock
 from langchain_community.vectorstores.faiss import FAISS
+from langchain_community.document_loaders.pdf import PyPDFDirectoryLoader
 from langchain.chains.retrieval_qa.base import RetrievalQA
 from langchain.prompts import PromptTemplate
 from langchain.text_splitter import RecursiveCharacterTextSplitter
-from langchain_community.document_loaders.pdf import PyPDFDirectoryLoader
 from langchain.globals import set_verbose
 set_verbose(False)
 
@@ -97,6 +97,10 @@ def streamlit_ui():
             llm = load_llm()
             st.write(get_result(llm, faiss_index, user_question))
             st.success("Generated")
+    if middleleft_column:
+        st.empty()
+    if middleright_column:
+        st.empty()
     if right_column.button("New Data Update", key="update_vector_store"):
         with st.spinner("Updating... this may take a few minutes as we go through your PDF collection..."):
             docs = data_ingestion()
