@@ -7,7 +7,7 @@ User=root
 Group=root
 WorkingDirectory=/home/ubuntu/pdf-query-rag-llm-app
 Environment="PATH=/home/ubuntu/pdf-query-rag-llm-app_env/bin"
-ExecStart=/home/ubuntu/pdf-query-rag-llm-app_env/bin/streamlit run /home/ubuntu/pdf-query-rag-llm-app/pdf-query-rag-llm-app.py --server.port 8080 --server.headless true
+ExecStart=/home/ubuntu/pdf-query-rag-llm-app_env/bin/streamlit run /home/ubuntu/pdf-query-rag-llm-app/pdf_query_rag_llm_app.py --server.port 8080 --server.headless true
  
 [Install]
 WantedBy=multi-user.target
