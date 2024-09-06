@@ -66,7 +66,7 @@ def get_result(llm, vector_store, query):
 
 # Streamlit Frontend UI Section
 def streamlit_ui():
-    st.set_page_config("RAG")
+    st.set_page_config("PDF Query RAG LLM Application")
     st.markdown("""
         <style>
             .reportview-container {
@@ -80,7 +80,7 @@ def streamlit_ui():
     """, unsafe_allow_html=True)
     st.header("PDF Query with Generative AI")
 
-    user_question = st.text_input("Ask me anything about your PDF collection.")
+    user_question = st.text_input(r":gray[$\textsf{\normalsize Ask me anything about your PDF collection.}$]")
 
     left_column, middleleft_column, middleright_column, right_column = st.columns(4, gap="small")
     if left_column.button("Generate Response", key="submit_question") or user_question:
