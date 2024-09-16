@@ -6,9 +6,9 @@
 ## Description
 
 This repo is provide an example of a PDF query with Generative AI application that uses a <a href="https://en.wikipedia.org/wiki/Retrieval-augmented_generation" target="_blank">Retrieval-augmented generation (RAG) process</a>. Vector representations of unstructured text are generated through <a href="https://docs.aws.amazon.com/bedrock/latest/userguide/titan-embedding-models.html" target="_blank">Amazon Titan Embeddings</a> and search of those embeddings are done through <a href="https://ai.meta.com/tools/faiss/" target="_blank">Facebook AI Similarity Search (FAISS)</a>. <a href="https://docs.anthropic.com/en/docs/about-claude/models" target="_blank">Claude 3.5 Sonnet LLM Model</a> is utilized as the LLM model. Amazon Titan Embeddings and Claude 3.5 Sonnet are accessed via <a href="https://aws.amazon.com/bedrock/" target="_blank">AWS Bedrock</a>. For the frontend UI <a href="https://streamlit.io/" target="_blank">Streamlit</a> is being used.
-
+<p align="center">
 <img src="flow-diagram.svg" alt="PDF Query RAG-Based LLM GenAI Web Application Process Flow" />
-
+</p>
 * This example application can be used against multiple PDF's just add them to the *data* directory and click *New Data Update*.
 * Depending on the size of your PDF's and your cpu specs it can take awhile to generated the embeddings.
 * This application does not take into consideration security controls, that is up to you.
