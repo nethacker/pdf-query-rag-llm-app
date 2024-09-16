@@ -1,6 +1,6 @@
 [![Pylint](https://github.com/nethacker/pdf-query-rag-llm-app/actions/workflows/pylint.yml/badge.svg)](https://github.com/nethacker/pdf-query-rag-llm-app/actions/workflows/pylint.yml)
 # PDF Query RAG-Based LLM APP
-* **License: (Apache 2.0), Copyright (C) 2024, Author Phil Chen (nethacker)**
+* License: (Apache 2.0), Copyright (C) 2024, Author Phil Chen (nethacker)
   * This is a example application the author of this repository is not liable for damages or losses arising from your use or inability to use the code.
 
 ## Description
