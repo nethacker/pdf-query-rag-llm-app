@@ -39,7 +39,7 @@ As with most AWS services you will incur costs for usage.
   * https://aws.amazon.com/bedrock/pricing/
   * https://aws.amazon.com/ec2/pricing/on-demand/
 
-#### macOS Laptop Local Setup
+#### macOS laptop local setup
 
 ```
 conda create -n "pdf-query-rag-llm-app" python=3.11.0
@@ -51,7 +51,7 @@ cd pdf-query-rag-llm-app
 pip install -r requirements.txt
 ```
 
-#### Run macOS Laptop Local Setup
+#### Run macOS laptop local setup
 
 To run text PDF Query RAG LLM Application
 
@@ -61,7 +61,7 @@ streamlit run pdf_query_rag_llm_app.py
 
 You can reach the app at `http://localhost:8501/`. Please put your PDF's that you want to query in the *data* directory and click *New Data Update* before querying.
 
-### EC2 Ubuntu Linux Instance Setup Steps
+### EC2 Ubuntu instance setup steps
 (assumes you have a ubuntu user with /home/ubuntu)
 
 #### Install some dependencies
@@ -79,28 +79,28 @@ sudo apt -y install nginx
 sudo apt -y install virtualenvwrapper
 ```
 
-#### Clone the GIT Repository
+#### Clone the GIT repository
 ```
 cd /home/ubuntu
 
 git clone https://github.com/nethacker/pdf-query-rag-llm-app.git
 ```
 
-#### Setup the Python Environment
+#### Setup the Python environment
 ```
 virtualenv pdf-query-rag-llm-app_env
 
 source pdf-query-rag-llm-app_env/bin/activate
 ```
 
-#### Install the PDF Query RAG LLM Application package dependencies
+#### Install the PDF Query RAG LLM application package dependencies
 ```
 cd /home/ubuntu/pdf-query-rag-llm-app
 
 pip install -r requirements.txt
 ```
 
-#### Setup systemd to daemonize and bootstrap the PDF Query RAG-Based LLM APP (Port 8080)
+#### Setup systemd to daemonize and bootstrap the PDF Query RAG-Based LLM application (Port 8080)
 ```
 sudo cp systemd/pdf-query-rag-llm-app.service /etc/systemd/system/
 
