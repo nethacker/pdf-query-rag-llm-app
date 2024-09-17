@@ -3,18 +3,16 @@
 * License: (Apache 2.0), Copyright (C) 2024, Author Phil Chen (nethacker)
   * This is a example application the author of this repository is not liable for damages or losses arising from your use or inability to use the code.
 
-## Description
+## Descriptiona
 
-This repo provides an example of a PDF query application leveraging Generative AI that uses a <a href="https://en.wikipedia.org/wiki/Retrieval-augmented_generation" target="_blank">Retrieval-augmented generation (RAG) process</a>. Vector representations of unstructured text are generated through <a href="https://docs.aws.amazon.com/bedrock/latest/userguide/titan-embedding-models.html" target="_blank">Amazon Titan Embeddings</a> and storage/search of those embeddings are done through <a href="https://ai.meta.com/tools/faiss/" target="_blank">Facebook AI Similarity Search (FAISS)</a>. <a href="https://docs.anthropic.com/en/docs/about-claude/models" target="_blank">Claude 3.5 Sonnet LLM Model</a> is utilized as the LLM model. Amazon Titan Embeddings and Claude 3.5 Sonnet are accessed via <a href="https://aws.amazon.com/bedrock/" target="_blank">AWS Bedrock</a>. <a href="https://langchain.com" target="_blank">LangChain</a> is utilized for the prompt template guiding the models response, RetrievalQA for query pertinent data, and various PDF processing tools. For the frontend UI <a href="https://streamlit.io/" target="_blank">Streamlit</a> is being used.
+This repo provides an example of a PDF query web application leveraging Generative AI that uses a <a href="https://en.wikipedia.org/wiki/Retrieval-augmented_generation" target="_blank">retrieval-augmented generation (RAG) process</a>. The importance of using RAG is the ability to scope the results of the generated response from the LLM in our case <a href="https://docs.anthropic.com/en/docs/about-claude/models" target="_blank">Claude 3.5 Sonnet</a> with up-to-date, accurate, reliable responses. RAG allows for domain-specific contextually relevant responses tailored to your data rather than static training data.
+
+The PDF query web application will leverage <a href="https://ai.meta.com/tools/faiss/" target="_blank">Facebook AI Similarity Search (FAISS)</a> and <a href="https://docs.aws.amazon.com/bedrock/latest/userguide/titan-embedding-models.html" target="_blank">Amazon Titan Embeddings</a> to create vector representations of unstructured text and the storage/search of those embeddings. <a href="https://langchain.   com" target="_blank">LangChain</a> is utilized for the prompt template guiding the models response, RetrievalQA for pertinent data, and various PDF processing tools. We will use <a href="https://aws.amazon.com/bedrock/" target="_blank">Amazon Bedrock</a> to access Claude 3.5 Sonnet and Amazon Titan Embeddings.
+
 
 <p align="center">
 <img src="flow-diagram.svg" alt="PDF Query RAG-Based LLM GenAI Web Application Process Flow" />
 </p>
-
-* This example application can be used against multiple PDF's just add them to the *data* directory and click *New Data Update*.
-* Depending on the size of your PDF's and your cpu specs it can take awhile to generated the embeddings.
-* This application does not take into consideration security controls, that is up to you.
-* Please read <a href="https://aws.amazon.com/bedrock/faqs/" target="_blank">Amazon Bedrock FAQ's</a> for general questions about AWS LLM resources used.
 
 ## Prerequisites for macOS Laptop Local Setup
 
@@ -41,7 +39,7 @@ As with most AWS services you will incur costs for usage.
   * https://aws.amazon.com/bedrock/pricing/
   * https://aws.amazon.com/ec2/pricing/on-demand/
 
-## macOS Laptop Local Setup
+#### macOS Laptop Local Setup
 
 ```
 conda create -n "pdf-query-rag-llm-app" python=3.11.0
@@ -53,7 +51,7 @@ cd pdf-query-rag-llm-app
 pip install -r requirements.txt
 ```
 
-## Run macOS Laptop Local Setup
+#### Run macOS Laptop Local Setup
 
 To run text PDF Query RAG LLM Application
 
@@ -63,10 +61,10 @@ streamlit run pdf_query_rag_llm_app.py
 
 You can reach the app at `http://localhost:8501/`. Please put your PDF's that you want to query in the *data* directory and click *New Data Update* before querying.
 
-## EC2 Ubuntu Linux Instance Setup Steps
+### EC2 Ubuntu Linux Instance Setup Steps
 (assumes you have a ubuntu user with /home/ubuntu)
 
-### Install some dependencies
+#### Install some dependencies
 ```
 sudo apt -y update
 
@@ -81,28 +79,28 @@ sudo apt -y install nginx
 sudo apt -y install virtualenvwrapper
 ```
 
-### Clone the GIT Repository
+#### Clone the GIT Repository
 ```
 cd /home/ubuntu
 
 git clone https://github.com/nethacker/pdf-query-rag-llm-app.git
 ```
 
-### Setup the Python Environment
+#### Setup the Python Environment
 ```
 virtualenv pdf-query-rag-llm-app_env
 
 source pdf-query-rag-llm-app_env/bin/activate
 ```
 
-### Install the PDF Query RAG LLM Application package dependencies
+#### Install the PDF Query RAG LLM Application package dependencies
 ```
 cd /home/ubuntu/pdf-query-rag-llm-app
 
 pip install -r requirements.txt
 ```
 
-### Setup systemd to daemonize and bootstrap the PDF Query RAG-Based LLM APP (Port 8080)
+#### Setup systemd to daemonize and bootstrap the PDF Query RAG-Based LLM APP (Port 8080)
 ```
 sudo cp systemd/pdf-query-rag-llm-app.service /etc/systemd/system/
 
@@ -111,7 +109,7 @@ sudo systemctl start pdf-query-rag-llm-app
 sudo systemctl enable pdf-query-rag-llm-app.service
 ```
 
-### Install NGINX to help scale and handle connections (Port 80)
+#### Install NGINX to help scale and handle connections (Port 80)
 ```
 sudo cp nginx/nginx_pdf-query-rag-llm-app.conf /etc/nginx/sites-available/nginx_pdf-query-rag-llm-app.conf
 
@@ -126,7 +124,9 @@ You can reach the app at `http://{yourhost}`. Please put your PDF's that you wan
 
 ### Miscellaneous
 
-* Make sure to open up port 80 in your EC2 Security Group Associated to the Instnace
+* Make sure to open up port 80 in your EC2 Security Group associated to the instance.
 * For HTTPS (TLS) you can use AWS ALB or AWS CloudFront
-* Depending on how many PDF's you have and how big they are using the New Data Update button can take awhile as it builds your vector embeddings
-* Any time you add PDF's or change them make sure to click "New Data Update" to update/build your vector embeddings.
+* Depending on how many PDF’s you have, how big the PDF’s are, and your CPU specifications using the New Data Update button can take awhile as it builds your vector embeddings.
+* Any time you add PDF’s or change them make sure to click “New Data Update” to update/build your vector embeddings.
+* This application does not take into consideration security controls, that is your responsibility.
+* Please read <a href="https://aws.amazon.com/bedrock/faqs/" target="_blank">Amazon Bedrock FAQ's</a> for general questions about AWS LLM resources used.
