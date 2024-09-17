@@ -3,7 +3,7 @@
 * License: (Apache 2.0), Copyright (C) 2024, Author Phil Chen (nethacker)
   * This is a example application the author of this repository is not liable for damages or losses arising from your use or inability to use the code.
 
-## Descriptiona
+### Description
 
 This repo provides an example of a PDF query web application leveraging Generative AI that uses a <a href="https://en.wikipedia.org/wiki/Retrieval-augmented_generation" target="_blank">retrieval-augmented generation (RAG) process</a>. The importance of using RAG is the ability to scope the results of the generated response from the LLM in our case <a href="https://docs.anthropic.com/en/docs/about-claude/models" target="_blank">Claude 3.5 Sonnet</a> with up-to-date, accurate, reliable responses. RAG allows for domain-specific contextually relevant responses tailored to your data rather than static training data.
 
@@ -14,7 +14,7 @@ The PDF query web application will leverage <a href="https://ai.meta.com/tools/f
 <img src="flow-diagram.svg" alt="PDF Query RAG-Based LLM GenAI Web Application Process Flow" />
 </p>
 
-## Prerequisites for macOS Laptop Local Setup
+### Prerequisites for macOS laptop local setup
 
 * <a href="https://aws.amazon.com" target="_blank"> Amazon Web Services Account</a>
 * AWS CLI <a href="https://docs.aws.amazon.com/cli/latest/userguide/getting-started-quickstart.html" target="_blank">installed</a>
@@ -23,7 +23,7 @@ The PDF query web application will leverage <a href="https://ai.meta.com/tools/f
 * Anaconda or Miniconda installed 
 * AWS Default Region is set to us-east-1 you can change the region in the `pdf_query_rag_llm_app.py` file under `region_name='us-east-1'`
 
-## Prerequisites for EC2 Ubuntu Linux Instance Setup
+### Prerequisites for EC2 Ubuntu Linux Instance Setup
 * <a href="https://aws.amazon.com" target="_blank"> Amazon Web Services Account</a>
 * AWS user with Bedrock Access (Specifically Amazon Titan Embeddings and Claude 3.5 Sonnet) see: <a href="https://docs.aws.amazon.com/bedrock/latest/userguide/model-access.html" target="_blank">Manage access to  Amazon Bedrock foundation models</a>
 * EC2 Instance Role with AmazonBedrockFullAccess Policy Attached (note you can make this more secure by making a custom policy)
@@ -31,7 +31,7 @@ The PDF query web application will leverage <a href="https://ai.meta.com/tools/f
 * Virtualenv
 * AWS Default Region is set to us-east-1 you can change the region in the `pdf_query_rag_llm_app.py` file under `region_name='us-east-1'`
 
-## AWS Resource Cost
+### AWS Resource Cost
 
 As with most AWS services you will incur costs for usage. 
 
