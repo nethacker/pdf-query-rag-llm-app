@@ -23,7 +23,7 @@ The PDF query web application will leverage <a href="https://ai.meta.com/tools/f
 * Anaconda or Miniconda installed 
 * AWS Default Region is set to us-east-1 you can change the region in the `pdf_query_rag_llm_app.py` file under `region_name='us-east-1'`
 
-### Prerequisites for EC2 Ubuntu Linux Instance Setup
+### Prerequisites for EC2 Ubuntu instance setup
 * <a href="https://aws.amazon.com" target="_blank"> Amazon Web Services Account</a>
 * AWS user with Bedrock Access (Specifically Amazon Titan Embeddings and Claude 3.5 Sonnet) see: <a href="https://docs.aws.amazon.com/bedrock/latest/userguide/model-access.html" target="_blank">Manage access to  Amazon Bedrock foundation models</a>
 * EC2 Instance Role with AmazonBedrockFullAccess Policy Attached (note you can make this more secure by making a custom policy)
