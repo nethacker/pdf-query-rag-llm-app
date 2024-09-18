@@ -25,7 +25,7 @@ The PDF query web application will leverage <a href="https://ai.meta.com/tools/f
 
 ### Prerequisites for EC2 Ubuntu instance setup
 * <a href="https://aws.amazon.com" target="_blank"> Amazon Web Services Account</a>
-* AWS user with Bedrock Access (Specifically Amazon Titan Embeddings and Claude 3.5 Sonnet) see: <a href="https://docs.aws.amazon.com/bedrock/latest/userguide/model-access.html" target="_blank">Manage access to  Amazon Bedrock foundation models</a>
+* Enable Amazon Bedrock Access (Specifically Amazon Titan Embeddings and Claude 3.5 Sonnet) see: <a href="https://docs.aws.amazon.com/bedrock/latest/userguide/model-access.html" target="_blank">Manage access to  Amazon Bedrock foundation models</a>
 * EC2 Instance Role with AmazonBedrockFullAccess Policy Attached (note you can make this more secure by making a custom policy)
 * EC2 Instance Ubuntu 20.04 or higher
 * Virtualenv
@@ -62,7 +62,7 @@ streamlit run pdf_query_rag_llm_app.py
 You can reach the app at `http://localhost:8501/`. Please put your PDF's that you want to query in the *data* directory and click *New Data Update* before querying.
 
 ### EC2 Ubuntu instance setup steps
-(assumes you have a ubuntu user with /home/ubuntu)
+(This example assumes you have a ubuntu user with /home/ubuntu)
 
 #### Install some dependencies
 ```
@@ -122,7 +122,7 @@ sudo systemctl restart nginx
 
 You can reach the app at `http://{yourhost}`. Please put your PDF's that you want to query in the *data* directory on the instance and click *New Data Update* before querying.
 
-### Miscellaneous
+### Notes
 
 * Make sure to open up port 80 in your EC2 Security Group associated to the instance.
 * For HTTPS (TLS) you can use AWS ALB or AWS CloudFront
