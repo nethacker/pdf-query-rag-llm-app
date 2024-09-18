@@ -19,7 +19,7 @@ The PDF query web application will leverage <a href="https://ai.meta.com/tools/f
 * <a href="https://aws.amazon.com" target="_blank"> Amazon Web Services Account</a>
 * AWS CLI <a href="https://docs.aws.amazon.com/cli/latest/userguide/getting-started-quickstart.html" target="_blank">installed</a>
 * AWS CLI user with Bedrock Access (Specifically Amazon Titan Embeddings and Claude 3.5 Sonnet) see: <a href="https://docs.aws.amazon.com/bedrock/latest/userguide/model-access.html" target="_blank">Manage access to Amazon Bedrock foundation models</a>
-* Python 3.8 or higher
+* Verified on Python 3.10, 3.11, 3.12
 * Anaconda or Miniconda installed 
 * AWS Default Region is set to us-east-1 you can change the region in the `pdf_query_rag_llm_app.py` file under `region_name='us-east-1'`
 
@@ -27,7 +27,8 @@ The PDF query web application will leverage <a href="https://ai.meta.com/tools/f
 * <a href="https://aws.amazon.com" target="_blank"> Amazon Web Services Account</a>
 * Enable Amazon Bedrock Access (Specifically Amazon Titan Embeddings and Claude 3.5 Sonnet) see: <a href="https://docs.aws.amazon.com/bedrock/latest/userguide/model-access.html" target="_blank">Manage access to  Amazon Bedrock foundation models</a>
 * EC2 Instance Role with AmazonBedrockFullAccess Policy Attached (note you can make this more secure by making a custom policy)
-* EC2 Instance Ubuntu 20.04 or higher
+* Verified on EC2 Instance Ubuntu 22.04 and Ubuntu 24.04
+* Verified on Python 3.10, 3.11, 3.12
 * Virtualenv
 * AWS Default Region is set to us-east-1 you can change the region in the `pdf_query_rag_llm_app.py` file under `region_name='us-east-1'`
 
